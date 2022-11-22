@@ -22,6 +22,7 @@ namespace schung {
         int getSock() const;
         int getConnection() const;
 
+        void setConnection(int connection);
     };
 }
 #endif //SIMPLESOCKET_HPP

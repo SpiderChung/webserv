@@ -11,9 +11,6 @@ schung::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int po
 
     sock = socket(domain, service, protocol);
     test_connection(sock);
-
-    connection = connect_to_network(sock, address);
-    test_connection(connection);
 }
 
 void schung::SimpleSocket::test_connection(int item_to_test) {
@@ -33,4 +30,8 @@ int schung::SimpleSocket::getSock() const {
 
 int schung::SimpleSocket::getConnection() const {
     return connection;
+}
+
+void schung::SimpleSocket::setConnection(int connection) {
+    this->connection = connection;
 }
