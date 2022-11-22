@@ -7,6 +7,7 @@
 #include <stdio.h>
 
 #include "webserv.hpp"
+#include "./Networking/schung_networking.hpp"
 
 int main()
 {
@@ -17,4 +18,5 @@ int main()
     schung::ListeningSocket ls = schung::ListeningSocket(AF_INET, SOCK_STREAM, 0, 80, INADDR_ANY, 10);
     std::cout << "Success..." << std::endl;
 
+    return 0;
 }

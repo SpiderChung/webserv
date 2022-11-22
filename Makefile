@@ -14,7 +14,8 @@ OBJ_FILES	=	$(patsubst %.cpp,%.o, $(notdir $(SRC)))
 
 OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-$(OBJ_DIR)%.o: %.cpp Makefile $(HEADER)
+
+$(OBJ_DIR)%.o: $(SRC) Makefile $(HEADER)
 	@mkdir -p $(OBJ_DIR)
 	@echo "$(YELLOW)Compiling [$@]...$(RESET)"
 	@$(CC) $(FLAGS) -o $@ -c $<
@@ -26,6 +27,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
+	@echo  $(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@echo "$(GREEN)Finished [$(NAME)]$(RESET)"
 
